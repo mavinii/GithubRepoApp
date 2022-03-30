@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
                     val bodyString = response.body?.string()
                     val json = Gson()
                     val userGitData = json.fromJson(bodyString, UserGitData::class.java)
-                    Log.i("info","msg: $userGitData")
+                    Log.i("info", "msg: $userGitData")
                 }
             }
         })//finish okHttpClient
