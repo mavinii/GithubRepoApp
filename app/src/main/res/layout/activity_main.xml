@@ -8,41 +8,133 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/avatarImage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_gravity="center"
+        app:shapeAppearanceOverlay="@style/RoundCorner"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <TextView
-        android:id="@+id/userFullName"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Full name" />
+        android:orientation="vertical"
+        android:layout_gravity="center">
 
-    <TextView
-        android:id="@+id/userName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Username"/>
+        <TextView
+            android:id="@+id/userFullName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Full name"
+            android:paddingTop="10dp"/>
 
-    <TextView
-        android:id="@+id/userFollows"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="followers" />
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Username"
+            android:paddingTop="5dp"/>
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/userWorkplace"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="work place" />
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
 
-    <TextView
-        android:id="@+id/userAddress"
-        android:layout_width="match_parent"
+        <ImageView
+            android:id="@+id/followersIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_followme"
+            android:layout_marginEnd="5dp"
+            />
+
+        <TextView
+            android:id="@+id/userFollowers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:text="followers" />
+
+        <TextView
+            android:id="@+id/followersDysplay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:text="followers"/>
+
+        <TextView
+            android:id="@+id/spaceBetween"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="5dp"
+            android:text="-"
+            />
+
+        <TextView
+            android:id="@+id/userFollowing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:text="following" />
+
+        <TextView
+            android:id="@+id/followingDysplay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:text="following"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="adress" />
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_workplace"
+            android:layout_gravity="center"
+            android:layout_marginEnd="5dp"/>
+
+        <TextView
+            android:id="@+id/userWorkplace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="work place" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_location"
+            android:layout_marginEnd="5dp"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/userAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="adress" />
+    </LinearLayout>
 
 
 </LinearLayout>

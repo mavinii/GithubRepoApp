@@ -3,13 +3,17 @@ package com.josue.githubrepoapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.squareup.picasso.MemoryPolicy
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_main.*
 import okhttp3.*
+import org.w3c.dom.Text
 import java.io.IOException
 
 
@@ -46,7 +50,26 @@ class MainActivity : AppCompatActivity() {
                     //addressing to main thread
                     runOnUiThread{
                         //addressing all the info to the right spot in the layout
-                    findViewById<TextView>(R.id.userName).text = gitHubData.login
+                        //userName
+                        findViewById<TextView>(R.id.userName).text = gitHubData.login
+                        //avatar image
+                        val userImage = findViewById<ImageView>(R.id.avatarImage)
+                        val imageUrl = gitHubData.avatar_url
+                        Picasso.get()
+                            .load(imageUrl)
+                            .placeholder(getDrawable(R.drawable.coffee)!!)
+                            .error(getDrawable(R.drawable.ic_baseline_error_24)!!)
+                            .memoryPolicy(MemoryPolicy.NO_CACHE)
+                            .into(userImage)
+                        //full name
+                        findViewById<TextView>(R.id.userFullName).text = gitHubData.name
+                        //follows
+                        findViewById<TextView>(R.id.userFollowers).text = gitHubData.followers.toString()
+                        findViewById<TextView>(R.id.userFollowing).text = gitHubData.following.toString()
+                        //company
+                        findViewById<TextView>(R.id.userWorkplace).text = gitHubData.company
+                        //location
+                        findViewById<TextView>(R.id.userAddress).text = gitHubData.location
 
                     }
                 }
