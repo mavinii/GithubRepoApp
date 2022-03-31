@@ -9,5 +9,6 @@ data class UserGitData(
     @SerializedName("company")val company: String,
     @SerializedName("location")val location: String,
     @SerializedName("followers")val followers: Int,
-    @SerializedName("following")val following: Int
+    @SerializedName("following")val following: Int,
+
 )
