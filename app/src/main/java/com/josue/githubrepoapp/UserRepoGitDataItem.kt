@@ -7,5 +7,4 @@ data class UserRepoGitDataItem(
     val name: String,
     val `private`: Boolean,
     val stargazers_count: Int,
-
 )

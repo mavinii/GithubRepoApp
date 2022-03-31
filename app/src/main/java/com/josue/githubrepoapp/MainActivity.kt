@@ -85,7 +85,6 @@ class MainActivity : AppCompatActivity() {
 
     //start fun to get user repos data from API
     private fun fetchUserReposData() {
-        TODO("Not yet implemented")
     }
 
 
