@@ -18,7 +18,7 @@ class PostsAdapter(private val userData: Array<UserGitData>, private val context
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserDataViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val view = inflater.inflate(R.layout.activity_main, parent, false)
+        val view = inflater.inflate(R.layout.recycle_main, parent, false)
         return UserDataViewHolder(view)
     }
 

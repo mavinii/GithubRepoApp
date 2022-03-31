@@ -8,41 +8,10 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/avatarImage"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <TextView
-        android:id="@+id/userFullName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Full name" />
-
-    <TextView
-        android:id="@+id/userName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Username"/>
-
-    <TextView
-        android:id="@+id/userFollows"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="followers" />
-
-    <TextView
-        android:id="@+id/userWorkplace"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="work place" />
-
-    <TextView
-        android:id="@+id/userAddress"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="adress" />
+        android:layout_height="wrap_content" />
 
 
 </LinearLayout>

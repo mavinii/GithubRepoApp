@@ -2,22 +2,16 @@ package com.josue.githubrepoapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
-import android.service.autofill.UserData
 import android.util.Log
-import android.widget.TextView
-import android.widget.Toast
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
-import com.google.gson.internal.`$Gson$Types`.arrayOf
-import kotlinx.android.synthetic.main.activity_main.*
 import okhttp3.*
 import java.io.IOException
 
 
+private lateinit var newRecyclerView : RecyclerView
+private lateinit var userGitData: Array<UserGitData>
 
 // APP IS USING GITHUB API
 class MainActivity : AppCompatActivity() {
@@ -32,20 +26,23 @@ class MainActivity : AppCompatActivity() {
             override fun onFailure(call: Call, e: IOException) {
                 Log.e("error","Exception $e")
             }
-
             override fun onResponse(call: Call, response: Response) {
                 if (response.isSuccessful) {
                     val bodyString = response.body?.string()
                     val json = Gson()
-                    val userGitData = json.fromJson(bodyString, UserGitData::class.java)
-                    Log.i("info", "msg: $userGitData")
+                    userGitData = arrayOf(json.fromJson(bodyString, UserGitData::class.java))
+                    //Log.i("info", "msg: $userGitData")
                 }
             }
         })//finish okHttpClient
 
+        userGitData = arrayOf()
+        newRecyclerView = findViewById(R.id.recycleView)
+        newRecyclerView.layoutManager = LinearLayoutManager(this)
+        newRecyclerView.setHasFixedSize(true)
+        var adapter = PostsAdapter(userGitData,this@MainActivity)
+        newRecyclerView.adapter = adapter
     }//finish fun onCreate
-    
-
 
 
 }//finish Class MainActivity
