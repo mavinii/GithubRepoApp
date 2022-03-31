@@ -8,9 +8,11 @@ import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.RequiresApi
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.GsonBuilder
 import com.squareup.picasso.MemoryPolicy
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.activity_main.*
 import okhttp3.*
 import java.io.IOException
 
@@ -22,7 +24,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         //starting fun to get user data from API
-        fetchUserData()
+        //fetchUserData()
+
+        //starting layout manager
+        //recycleViewRepo.layoutManager = LinearLayoutManager(this)
 
         //staring fun to get user repos data from API
         fetchUserReposData()
@@ -85,7 +90,24 @@ class MainActivity : AppCompatActivity() {
 
     //start fun to get user repos data from API
     private fun fetchUserReposData() {
-    }
+        val client = OkHttpClient()
+        val request = Request.Builder().url("https://api.github.com/users/Torvalds/repos").build()
+        client.newCall(request).enqueue(object : Callback {
+            override fun onFailure(call: Call, e: IOException) {
+                Log.e("error", "Exception $e")
+            }
 
+            override fun onResponse(call: Call, response: Response) {
+                if(response.isSuccessful){
+                    val bodyString = response.body?.string()
+                    println(bodyString)
+                    //val gson = GsonBuilder().create()
+                    //var userRepoGitData = gson.fromJson(bodyString,ArrayList<UserRepoGitData>::class.java)
+
+                }
+            }
+
+        })
+    }
 
 }//finish Class MainActivity
