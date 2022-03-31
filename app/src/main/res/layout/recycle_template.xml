@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/recycleTemplate"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/repoName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="repoName"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/repoVisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="repoVisible" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/repoDescription"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="repoDescription"
+        android:layout_weight="1"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/repoLanguage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="repoLanguage"
+            android:layout_marginEnd="5dp"/>
+
+        <TextView
+            android:id="@+id/repoStared"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="repoStars"
+            android:layout_marginEnd="5dp"/>
+
+        <TextView
+            android:id="@+id/repoFork"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="repoForks" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -74,7 +74,6 @@
             android:id="@+id/spaceBetween"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:layout_marginEnd="5dp"
             android:text="-"
             />
@@ -90,7 +89,6 @@
             android:id="@+id/followingDysplay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="5dp"
             android:text="following"/>
     </LinearLayout>
 
@@ -134,7 +132,13 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="adress" />
+
     </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleViewRepo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 
 </LinearLayout>

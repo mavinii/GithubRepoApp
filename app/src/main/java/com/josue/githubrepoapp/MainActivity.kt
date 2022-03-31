@@ -1,19 +1,17 @@
 package com.josue.githubrepoapp
 
+import android.icu.text.NumberFormat
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.google.gson.Gson
+import androidx.annotation.RequiresApi
 import com.google.gson.GsonBuilder
 import com.squareup.picasso.MemoryPolicy
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.activity_main.*
 import okhttp3.*
-import org.w3c.dom.Text
 import java.io.IOException
 
 
@@ -23,13 +21,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //starting fun to get data from API
-        fetchData()
+        //starting fun to get user data from API
+        fetchUserData()
+
+        //staring fun to get user repos data from API
+        fetchUserReposData()
 
     }//finish fun onCreate
 
-    //fun to get data from API
-    private fun fetchData() {
+    //start fun to get user data from API
+    private fun fetchUserData() {
         //start okHttpClient
         val client = OkHttpClient()
         val request = Request.Builder().url("https://api.github.com/users/Torvalds").build()
@@ -37,6 +38,7 @@ class MainActivity : AppCompatActivity() {
             override fun onFailure(call: Call, e: IOException) {
                 Log.e("error","Exception $e")
             }
+            @RequiresApi(Build.VERSION_CODES.N)
             override fun onResponse(call: Call, response: Response) {
                 if (response.isSuccessful) {
                     //getting the body from GITHUB API
@@ -64,8 +66,12 @@ class MainActivity : AppCompatActivity() {
                         //full name
                         findViewById<TextView>(R.id.userFullName).text = gitHubData.name
                         //follows
-                        findViewById<TextView>(R.id.userFollowers).text = gitHubData.followers.toString()
-                        findViewById<TextView>(R.id.userFollowing).text = gitHubData.following.toString()
+                        //format followers number
+                        val formatFollowers = NumberFormat.getInstance().format(gitHubData.followers)
+                        findViewById<TextView>(R.id.userFollowers).text = formatFollowers
+                        //format following number
+                        val formatFollowing = NumberFormat.getInstance().format(gitHubData.following)
+                        findViewById<TextView>(R.id.userFollowing).text = formatFollowing
                         //company
                         findViewById<TextView>(R.id.userWorkplace).text = gitHubData.company
                         //location
@@ -75,8 +81,13 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         })//finish okHttpClient
-
     }//finish fun fetchData
+
+    //start fun to get user repos data from API
+    private fun fetchUserReposData() {
+        TODO("Not yet implemented")
+    }
+
 
 
 }//finish Class MainActivity
