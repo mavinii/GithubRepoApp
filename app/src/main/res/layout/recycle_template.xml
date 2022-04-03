@@ -5,59 +5,114 @@
     android:id="@+id/recycleTemplate"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
+    android:layout_height="wrap_content"
+    android:background="@color/black"
+    android:padding="10dp"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:orientation="vertical"
+        android:background="@drawable/custom_border">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/repoName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/githubfont"
+                android:text="repoName"
+                android:layout_weight="1"
+                android:textColor="@color/blue"
+                android:padding="8dp"/>
+
+            <TextView
+                android:id="@+id/repoVisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/githubfont"
+                android:text="repoVisible"
+                android:paddingEnd="8dp"
+                android:paddingStart="8dp"
+                android:paddingTop="1.5dp"
+                android:paddingBottom="1.5dp"
+                android:textColor="@color/gray"
+                android:background="@drawable/round_border"/>
+
+        </LinearLayout>
+
+
 
         <TextView
-            android:id="@+id/repoName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="repoName"
-            android:layout_weight="1"/>
+            android:id="@+id/repoDescription"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="repoDescription"
+            android:textColor="@color/gray"
+            android:padding="10dp"/>
 
-        <TextView
-            android:id="@+id/repoVisible"
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="repoVisible" />
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_language"
+                app:tint="@color/gray"
+                android:layout_marginEnd="3dp"/>
+
+            <TextView
+                android:id="@+id/repoLanguage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="repoLanguage"
+                android:textColor="@color/gray" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                app:tint="@color/gray"
+                android:src="@drawable/ic_stars"
+                android:layout_marginEnd="3dp"/>
+
+            <TextView
+                android:id="@+id/repoStars"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="repoStars"
+                android:textColor="@color/gray" />
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="center"
+                app:tint="@color/gray"
+                android:src="@drawable/ic_code_fork_solid"
+                android:layout_marginEnd="3dp"/>
+
+            <TextView
+                android:id="@+id/repoForks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="repoForks"
+                android:textColor="@color/gray" />
+
+        </LinearLayout>
+
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/repoDescription"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:text="repoDescription"
-        android:layout_weight="1"/>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/repoLanguage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="repoLanguage"
-            android:layout_marginEnd="5dp"/>
-
-        <TextView
-            android:id="@+id/repoStared"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="repoStars"
-            android:layout_marginEnd="5dp"/>
-
-        <TextView
-            android:id="@+id/repoFork"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="repoForks" />
-    </LinearLayout>
 
 </LinearLayout>
