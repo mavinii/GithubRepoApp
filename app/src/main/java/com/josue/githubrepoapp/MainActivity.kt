@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
                         if (checked) {
                             val buttonSecond = findViewById<RadioButton>(R.id.radioOrgs)
                             buttonSecond.setOnClickListener(View.OnClickListener() {
-                                val intent = Intent(this@MainActivity, ApiUser::class.java)
+                                val intent = Intent(this@MainActivity, ApiOrgs::class.java)
                                 intent.putExtra("UserName", userInput )
                                 startActivity(intent)})
                         }
