@@ -23,11 +23,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //starting fun to get user data from API
-        //fetchUserData()
-
         //starting layout manager
-        //recycleViewRepo.layoutManager = LinearLayoutManager(this)
+        recycleViewRepo.layoutManager = LinearLayoutManager(this)
+
+        //starting fun to get user data from API
+        fetchUserData()
 
         //staring fun to get user repos data from API
         fetchUserReposData()
@@ -101,9 +101,11 @@ class MainActivity : AppCompatActivity() {
                 if(response.isSuccessful){
                     val bodyString = response.body?.string()
                     println(bodyString)
-                    //val gson = GsonBuilder().create()
-                    //var userRepoGitData = gson.fromJson(bodyString,ArrayList<UserRepoGitData>::class.java)
-
+                    val gson = GsonBuilder().create()
+                    val userRepoGitData = gson.fromJson(bodyString, UserRepoGitData::class.java)
+                    runOnUiThread {
+                        recycleViewRepo.adapter = MainAdapter(userRepoGitData, this@MainActivity)
+                    }
                 }
             }
 

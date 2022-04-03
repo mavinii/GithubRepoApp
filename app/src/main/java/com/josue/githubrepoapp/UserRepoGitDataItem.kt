@@ -5,6 +5,6 @@ data class UserRepoGitDataItem(
     val forks_count: Int,
     val language: String,
     val name: String,
-    val `private`: Boolean,
+    val visibility: String,
     val stargazers_count: Int,
 )

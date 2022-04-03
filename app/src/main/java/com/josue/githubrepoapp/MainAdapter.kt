@@ -20,7 +20,7 @@ class MainAdapter (private val userRepoData: UserRepoGitData , private val conte
         val data = userRepoData[position]
         holder.itemView.findViewById<TextView>(R.id.repoName).text = data.name
         holder.itemView.findViewById<TextView>(R.id.repoDescription).text = data.description
-        //holder.itemView.visibility = if (data.private) View.VISIBLE else View.GONE
+        holder.itemView.findViewById<TextView>(R.id.repoVisible).text = data.visibility
         holder.itemView.findViewById<TextView>(R.id.repoLanguage).text = data.language
         holder.itemView.findViewById<TextView>(R.id.repoStared).text = data.forks_count.toString()
         holder.itemView.findViewById<TextView>(R.id.repoFork).text = data.stargazers_count.toString()
