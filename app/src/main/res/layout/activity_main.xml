@@ -4,175 +4,79 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/mainLayout"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity"
     android:background="@color/black">
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_gravity="center"
-        android:paddingTop="10dp">
-
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/avatarImage"
-            android:layout_width="180dp"
-            android:layout_height="180dp"
-            android:layout_gravity="center"
-            app:shapeAppearanceOverlay="@style/RoundCorner"
-            tools:srcCompat="@tools:sample/avatars" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_gravity="center">
-
-        <TextView
-            android:id="@+id/userFullName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Full name"
-            android:textColor="@color/white"
-            android:fontFamily="@font/githubfont"
-            android:textSize="26sp"
-            android:paddingTop="10dp"/>
-
-        <TextView
-            android:id="@+id/userName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Username"
-            android:paddingTop="5dp"
-            android:textSize="20sp"
-            android:textColor="@color/gray"
-            android:fontFamily="@font/githubfont"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        >
-
-        <ImageView
-            android:id="@+id/followersIcon"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_gravity="center"
-            android:src="@drawable/ic_followme"
-            android:layout_marginEnd="5dp"
-            app:tint="@color/gray" />
-
-        <TextView
-            android:id="@+id/userFollowers"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="5dp"
-            android:text="followers"
-            android:textColor="@color/white"
-            android:fontFamily="@font/githubfont"/>
-
-        <TextView
-            android:id="@+id/followersDysplay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="5dp"
-            android:text="followers"
-            android:textColor="@color/gray"
-            android:fontFamily="@font/githubfont"/>
-
-        <TextView
-            android:id="@+id/spaceBetween"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="5dp"
-            android:text="-"
-            android:textColor="@color/white"
-            android:fontFamily="@font/githubfont"/>
-
-        <TextView
-            android:id="@+id/userFollowing"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="5dp"
-            android:text="following"
-            android:textColor="@color/white"
-            android:fontFamily="@font/githubfont"/>
-
-        <TextView
-            android:id="@+id/followingDysplay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="following"
-            android:textColor="@color/gray"
-            android:fontFamily="@font/githubfont"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center">
-
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/ic_workplace"
-            android:layout_gravity="center"
-            android:layout_marginEnd="5dp"
-            app:tint="@color/gray"
-            android:fontFamily="@font/githubfont"/>
-
-        <TextView
-            android:id="@+id/userWorkplace"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:fontFamily="@font/githubfont"
-            android:text="work place"
-            android:textColor="@color/white" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center"
-        android:paddingBottom="16dp">
-
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/ic_location"
-            android:layout_marginEnd="5dp"
-            android:layout_gravity="center"
-            app:tint="@color/gray"
-            android:fontFamily="@font/githubfont"/>
-
-        <TextView
-            android:id="@+id/userAddress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="adress"
-            android:textColor="@color/white"
-            android:fontFamily="@font/githubfont"/>
-
-    </LinearLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycleViewRepo"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/userSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ems="10"
+            android:fontFamily="@font/githubfont"
+            android:hint="Enter name first"
+            android:inputType="textPersonName"
+            android:paddingTop="10dp"
+            android:textColor="@color/white"
+            android:textSize="26sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/githubfont"
+                    android:paddingTop="10dp"
+                    android:text="@string/choose_users_orgs"
+                    android:textColor="@color/white"
+                    android:textSize="26sp" />
+
+                <RadioButton
+                    android:id="@+id/radioUsers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/githubfont"
+                    android:onClick="onRadioButtonClicked"
+                    android:paddingTop="10dp"
+                    android:text="@string/users"
+                    android:textColor="@color/white"
+                    android:textSize="26sp" />
+
+                <RadioButton
+                    android:id="@+id/radioOrgs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/githubfont"
+                    android:onClick="onRadioButtonClicked"
+                    android:paddingTop="10dp"
+                    android:text="@string/organizations"
+                    android:textColor="@color/white"
+                    android:textSize="26sp" />
+
+            </RadioGroup>
+        </LinearLayout>
+    </LinearLayout>
 
 
 </LinearLayout>

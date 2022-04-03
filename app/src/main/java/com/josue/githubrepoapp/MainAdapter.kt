@@ -24,6 +24,7 @@ class MainAdapter (private val userRepoData: UserRepoGitData , private val conte
         val data = userRepoData[position]
         holder.itemView.findViewById<TextView>(R.id.repoName).text = data.name
         holder.itemView.findViewById<TextView>(R.id.repoDescription).text = data.description
+                                                                                        //Format first letter to Upper case
         holder.itemView.findViewById<TextView>(R.id.repoVisible).text = data.visibility.replaceFirstChar {
             if (it.isLowerCase()) it.titlecase(
                 Locale.getDefault()
