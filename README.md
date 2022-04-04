@@ -1,6 +1,7 @@
 # Git Repos App
 - Continuous Assessment 3: Github Repos App
 - 22931 - Marcos Oliveira
+- APP IS USING GITHUB API
 
 ## Requirements:
 1. Get username and display corresponding user details and repositories as shown in the screenshot above
