@@ -1,7 +1,11 @@
 <resources>
-    <string name="app_name">GithubRepoApp</string>
+    <string name="app_name">GitHub Search Repo</string>
+
     <string name="choose_users_orgs">Choose between Users or Organizations:</string>
-    <string name="users">Users</string>
-    <string name="organizations">Organizations</string>
-    <string name="enter_user_or_org_first">Enter USER or ORG first!</string>
+
+    <string name="users">User</string>
+
+    <string name="organizations">Organization</string>
+
+    <string name="enter_user_or_org_first">Enter user name or org name:</string>
 </resources>
