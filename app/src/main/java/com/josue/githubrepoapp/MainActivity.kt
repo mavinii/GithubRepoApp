@@ -9,6 +9,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 
 // APP IS USING GITHUB API
+// 22931 - Marcos Oliveira
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,7 +18,6 @@ class MainActivity : AppCompatActivity() {
 
 
     }//finish fun onCreate
-
 
     fun onRadioButtonClicked(view: View) {
         val userInput = userSearch.text.toString()
